@@ -20,14 +20,24 @@
       }
     </style>
     <link type="text/css" rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto:300,400,500">
+    <link href="custom.css" rel="stylesheet"> 
   </head>
 
-  <body style="padding: 20px">
-	<div class="container-fluid">
+  <body>
+	 <div data-role="header" data-postion="fixed" style="background-color: white">
+	 <h1 class="header" style="z-index:9999" >FMCG Form</h1>
+	 </div>
+	<div class="container-fluid" style="margin-top:70px">
                 <div class="row">
                     <div class="col-lg-12">
                         <form>
+						<div class="form-group">
+						
                             <div class="form-group">
+                                <label for="exampleInputEmail1">Brand Name</label>
+                                <input type="text" class="form-control" maxlength="100" id="exampleInputEmail1" aria-describedby="emailHelp" placeholder="Enter text" required>
+                            </div>
+                           <!--div class="form-group">
                                 <label for="exampleInputEmail1">Text Box</label>
                                 <input type="email" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp" placeholder="Enter text">
                             </div>
@@ -38,89 +48,111 @@
                             <div class="form-group">
                                 <label for="exampleInputEmail1">Text Box</label>
                                 <input type="email" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp" placeholder="Enter text">
-                            </div>
-                            <div class="form-group">
-                                <label for="exampleInputEmail1">Text Box</label>
-                                <input type="email" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp" placeholder="Enter text">
-                            </div>
+                            </div-->
                             <div id="locationField" class="form-group">
 							  <label for="autocomplete">Company deatils </label>
-						      <input id="autocomplete" placeholder="Enter name of company/establishment" onFocus="geolocate()" type="text" class="form-control"></input>
+						      <input id="autocomplete" placeholder="Enter name of company/establishment" onFocus="geolocate()" type="text" class="form-control" required></input>
 						    </div>
 						   
 						    <div id="address" class="form-group">
-								<label class="col-xs-1 col-form-label" align="center">Address </label>
+								<label class="col-xs-12 col-form-label" align="left">Address </label>
 						        <!--div class="col-xs-2"><input class="form-control" placeholder="Plot No." id="street_number"></input></div-->
 								<div class="col-xs-11"><input class="form-control" id="route"></input></div>
-								<br><br>
+								<br><br><br>
 						    </div>
 						    <div class="form-group">
-								<label class="col-xs-1 col-form-label" align="center" for="locality">City</label>
+								<label class="col-xs-12 col-form-label" align="left" for="locality">City</label>
 						        <!-- Note: Selection of address components in this example is typical.
 						             You may need to adjust it for the locations relevant to your app. See
 						             https://developers.google.com/maps/documentation/javascript/examples/places-autocomplete-addressform
 						        -->
 						        <div class="col-xs-11"><input class="form-control" id="locality"></input></div>
-						        <br><br>
+						        <br><br><br>
 						    </div>
 						   <div class="form-group">
-								<label  class="col-xs-1 col-form-label" align="center" for="administrative_area_level_1">State</label>
+								<label  class="col-xs-12 col-form-label" align="left" for="administrative_area_level_1">State</label>
 								<div class="col-xs-11"><input class="form-control" id="administrative_area_level_1"</input></div>
-								<br><br>
+								<br><br><br>
 						   </div>
 						   <div class="form-group">
-							   <label class="col-form-label col-xs-1" align="center" for="postal_code">Pincode</label>
+							   <label class="col-form-label col-xs-12" align="left" for="postal_code">Pincode</label>
 							   <div class="col-xs-11"><input class="form-control" id="postal_code"></input></div>
-							   <br><br>
+							   <br><br><br>
 						   </div>
 						   <div class="form-group">
-							   <label class="col-form-label col-xs-1" align="center" for="country">Country</label>
+							   <label class="col-form-label col-xs-12" align="left" for="country">Country</label>
 							   <div class="col-xs-11"><input class="form-control" id="country"></input></div>
-							  <br><br>
+							  <br><br><br>
 						    </div>
 						    <div class="form-group">
-                                <label class="col-form-label col-xs-1" align="center" for="phone">Phone</label>
+                                <label class="col-form-label col-xs-12" align="left" for="phone">Phone</label>
                                 <div class="col-xs-11"><input type="tel" class="form-control" id="phone"></div>
-                                <br><br>
+                                <br><br><br>
                             </div>
                             <div class="form-group">
-                                <label class="col-form-label col-xs-1" align="center" for="website">Website</label>
+                                <label class="col-form-label col-xs-12" align="left" for="website">Website</label>
                                 <div class="col-xs-11"><input class="form-control" id="website" type="website"></div>
-                                <br><br><br><br>
+                                <br><br><br>
                             </div>
-							<div class="form-group">
-							  <label for="col-form-label col-xs-12">Product type</label><br>
+							<div class="form group">
+								<label for="col-form-label col-xs-12">Available at:</label><br>
+							
+							 <!--div class="col-xs-1"></div-->
+                              <div class="col-xs-12">
+								  <label class="form-check-label">
+									<input type="checkbox" class="form-check-input"> Local neighbourhood stores</label>
+							  </div>
 							  
-							  <div class="col-xs-1"></div>
-                              <div class="col-xs-11">
+							   
+                              <div class="col-xs-12">
+								  <label class="form-check-label">
+									<input type="checkbox" class="form-check-input"> Food Chains</label>
+							  </div>
+							  
+						
+                              <div class="col-xs-12">
+								  <label class="form-check-label">
+									<input type="checkbox" class="form-check-input"> Across the state</label>
+							  </div>
+							  <br>
+							  </div><br><br><br>
+							  <p></p>
+							<div class="form-group">
+							  <label for="col-form-label col-xs-12">Product type:</label><br>
+							  
+							  
+                              <div class="col-xs-12">
 								  <label class="form-check-label">
 									<input type="checkbox" class="form-check-input"> Indian dry snacks</label>
 							  </div>
 							  
-							  <div class="col-xs-1"></div>
-                              <div class="col-xs-11">
+							  
+                              <div class="col-xs-12">
 								  <label class="form-check-label">
 									<input type="checkbox" class="form-check-input"> Frozen foods and desserts</label>
 							  </div>
-							  <div class="col-xs-1"></div>
-							  <div class="col-xs-11">
+							  
+							  <div class="col-xs-12">
 								<label class="form-check-label">
 								  <input type="checkbox" class="form-check-input"> Drinks</label>
 							  </div>
 							  
-							  <div class="col-xs-1"></div>
-							  <div class="col-xs-11">
+							  
+							  <div class="col-xs-12">
 								<label class="form-check-label">
 								  <input type="checkbox" class="form-check-input"> Biscuits and bakery</label>
 							  </div>
 							  
-							  <div class="col-xs-1"></div>
-							  <div class="col-xs-11">
+							  
+							  <div class="col-xs-12">
 								<label class="form-check-label"><input type="checkbox" class="form-check-input"> Sweets and candies</label>
 							  </div>
                             </div>
 <div class="g-recaptcha" align="center" data-sitekey="6LfM7SUUAAAAADldafhJTFqj__Nc8TSYTV1blnZa"></div>
-
+<p></p>
+						<div class="col-xs-12" >
+						<input type="submit" name="Submit">
+                        </div>
                         </form>
                     </div>
                 </div>                        
@@ -129,11 +161,9 @@
     <script>
       // This example displays an address form, using the autocomplete feature
       // of the Google Places API to help users fill in the information.
-
       // This example requires the Places library. Include the libraries=places
       // parameter when you first load the API. For example:
       // <script src="https://maps.googleapis.com/maps/api/js?key=YOUR_API_KEY&libraries=places">
-
       var placeSearch, autocomplete;
       var componentForm = {
         //street_number: 'long_name',
@@ -143,28 +173,23 @@
         country: 'long_name',
         postal_code: 'short_name'
       };
-
       function initAutocomplete() {
         // Create the autocomplete object, restricting the search to geographical
         // location types.
         autocomplete = new google.maps.places.Autocomplete(
             /** @type {!HTMLInputElement} */(document.getElementById('autocomplete')),
             {types: ['establishment']});
-
         // When the user selects an address from the dropdown, populate the address
         // fields in the form.
         autocomplete.addListener('place_changed', fillInAddress);
       }
-
       function fillInAddress() {
         // Get the place details from the autocomplete object.
         var place = autocomplete.getPlace();
-
         for (var component in componentForm) {
           document.getElementById(component).value = '';
           document.getElementById(component).disabled = false;
         }
-
         // Get each component of the address from the place details
         // and fill the corresponding field on the form.
         for (var i = 0; i < place.address_components.length; i++) {
@@ -181,7 +206,6 @@
 		
 		
       }
-
       // Bias the autocomplete object to the user's geographical location,
       // as supplied by the browser's 'navigator.geolocation' object.
       function geolocate() {
