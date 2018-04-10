@@ -6,142 +6,111 @@
       <meta name="viewport" content="initial-scale=1.0, user-scalable=no">
       <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
       <meta charset="utf-8">
-      <style>
-         /* Always set the map height explicitly to define the size of the div
-         * element that contains the map. */
-         #map {
-         height: 100%;
-         }
-         /* Optional: Makes the sample page fill the window. */
-         html, body {
-         height: 100%;
-         margin: 0;
-         padding: 0;
-         }
-      </style>
       <link type="text/css" rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto:300,400,500">
-      <link href="custom.css" rel="stylesheet">
+      <link rel="stylesheet" type="text/css" href="style1.css" >
    </head>
    <body>
-      <div data-role="header" data-postion="fixed" style="background-color: white">
-         <h1 class="header" style="z-index:9999" >FMCG Form</h1>
+      <div class="row page-header" id="header">
+        <div class="col-xs-5" align="center">
+            <img src="https://media.licdn.com/mpr/mpr/shrink_200_200/AAEAAQAAAAAAAAjOAAAAJDFmMTM1NzA0LTQxZGYtNDBjNS1iNTc4LWI2Y2FiODMyYTkzYg.png" id="proteusLogo" height="100px"/>
+         </div>
+          <div class="col-xs-7" align="left" style="margin-top:25px"><h4>Indian FMCG Data Collection Form</h4></div>		
       </div>
-      <div class="container-fluid" style="margin-top:70px">
-         <div class="row">
-            <div class="col-lg-12">
-               <form action="main.jsp" method="POST">
-                  <div class="form-group">
+      <div class="container-fluid">
+               <form action="main.jsp" method="POST" style="margin-top:110px">
+                   <div class="form-group"><br>
+                       <label>Instructions on how to fill this form:</label>
+                       <p>Lorem ipsum lorem getty ipsum text details Lorem ipsum lorem getty ipsum text details Lorem ipsum lorem getty ipsum text details Lorem ipsum lorem getty ipsum text details</p>
+                   </div>
                      <div class="form-group">
-                        <label for="exampleInputEmail1">Brand Name</label>
-                        <input type="text" class="form-control" maxlength="100" id="exampleInputEmail1" aria-describedby="emailHelp" placeholder="Enter text" required>
+                        <label for="brand_name">Brand Name</label>
+                        <input type="text" class="form-control" maxlength="100" id="brand_name" name="brand_name" required>
                      </div>
-                     <!--div class="form-group">
-                        <label for="exampleInputEmail1">Text Box</label>
-                        <input type="email" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp" placeholder="Enter text">
-                        </div>
-                        <div class="form-group">
-                        <label for="exampleInputEmail1">Text Box</label>
-                        <input type="email" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp" placeholder="Enter text">
-                        </div>
-                        <div class="form-group">
-                        <label for="exampleInputEmail1">Text Box</label>
-                        <input type="email" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp" placeholder="Enter text">
-                        </div-->
                      <div id="locationField" class="form-group">
                         <label for="autocomplete">Company deatils </label>
-                        <input id="autocomplete" placeholder="Enter name of company/establishment" onFocus="geolocate()" type="text" class="form-control" required></input>
+                        <input id="autocomplete" name="est_name" placeholder="Enter name of Company / Establishment" onkeypress="return event.keyCode != 13;" onFocus="geolocate()" type="text" class="form-control" required />
                      </div>
+                     <div class="form-group" style="padding:0px 20px 0px 20px ">
                      <div id="address" class="form-group">
-                        <label class="col-xs-12 col-form-label" align="left">Address </label>
+                        <label class="col-form-label">Address </label>
                         <!--div class="col-xs-2"><input class="form-control" placeholder="Plot No." id="street_number"></input></div-->
-                        <div class="col-xs-11"><input class="form-control" id="route"></input></div>
-                        <br><br><br>
+                        <input class="form-control" name="address" id="route"/>
                      </div>
                      <div class="form-group">
-                        <label class="col-xs-12 col-form-label" align="left" for="locality">City</label>
+                        <label class="col-form-label" align="left" for="locality">City</label>
                         <!-- Note: Selection of address components in this example is typical.
                            You may need to adjust it for the locations relevant to your app. See
                            https://developers.google.com/maps/documentation/javascript/examples/places-autocomplete-addressform
                            -->
-                        <div class="col-xs-11"><input class="form-control" id="locality"></input></div>
-                        <br><br><br>
+                        <input class="form-control" name="city" id="locality" required/>
                      </div>
                      <div class="form-group">
-                        <label  class="col-xs-12 col-form-label" align="left" for="administrative_area_level_1">State</label>
-                        <div class="col-xs-11"><input class="form-control" id="administrative_area_level_1"</input></div>
-                        <br><br><br>
+                        <label  class="col-form-label" align="left" for="administrative_area_level_1">State</label>
+                        <input class="form-control" name="state" id="administrative_area_level_1"/ required>
                      </div>
                      <div class="form-group">
-                        <label class="col-form-label col-xs-12" align="left" for="postal_code">Pincode</label>
-                        <div class="col-xs-11"><input class="form-control" id="postal_code"></input></div>
-                        <br><br><br>
+                        <label class="col-form-label" align="left" for="postal_code">Pincode</label>
+                        <input class="form-control" name="pin_code" id="postal_code"/>
                      </div>
                      <div class="form-group">
-                        <label class="col-form-label col-xs-12" align="left" for="country">Country</label>
-                        <div class="col-xs-11"><input class="form-control" id="country"></input></div>
-                        <br><br><br>
+                        <label class="col-form-label" align="left" for="country">Country</label>
+                        <input class="form-control" name="country" id="country"/>
                      </div>
                      <div class="form-group">
-                        <label class="col-form-label col-xs-12" align="left" for="phone">Phone</label>
-                        <div class="col-xs-11"><input type="tel" class="form-control" id="phone"></div>
-                        <br><br><br>
+                        <label class="col-form-label" align="left" for="phone">Phone</label>
+                        <input type="tel" name="ph_num" class="form-control" id="phone"/>
                      </div>
                      <div class="form-group">
-                        <label class="col-form-label col-xs-12" align="left" for="website">Website</label>
-                        <div class="col-xs-11"><input class="form-control" id="website" type="website"></div>
-                        <br><br><br>
+                        <label class="col-form-label" align="left" for="website">Website</label>
+                        <input class="form-control" name="website" id="website" type="website"/>
                      </div>
+                   </div>
                      <div class="form group">
-                        <label for="col-form-label col-xs-12">Available at:</label><br>
-                        <!--div class="col-xs-1"></div-->
-                        <div class="col-xs-12">
-                           <label class="form-check-label">
-                           <input type="checkbox" class="form-check-input"> Local neighbourhood stores</label>
+                        <label class="col-form-label">Available at:</label>
+                         <div class="checkbox">
+                           <label class="form-check-label"><input value="on" type="checkbox" name="loc_neig_store"><input type="hidden" value="off" name="loc_neig_store" />Local neighbourhood stores</label>
                         </div>
-                        <div class="col-xs-12">
-                           <label class="form-check-label">
-                           <input type="checkbox" class="form-check-input"> Food Chains</label>
+                        <div class="checkbox">
+                           <label class="form-check-label"><input value="on" type="checkbox" name="food_chains" class="form-check-input"><input type="hidden" value="off" name="food_chains" />Food Chains</label>
                         </div>
-                        <div class="col-xs-12">
-                           <label class="form-check-label">
-                           <input type="checkbox" class="form-check-input"> Across the state</label>
+                        <div class="checkbox">
+                           <label class="form-check-label"><input value="on" type="checkbox" name="across_state" class="form-check-input"><input type="hidden" value="off" name="across_state" />Across the state</label>
                         </div>
-                        <br>
-                     </div>
-                     <br><br><br>
-                     <p></p>
-                     <div class="form-group">
-                        <label for="col-form-label col-xs-12">Product type:</label><br>
-                        <div class="col-xs-12">
+                   </div><br>
+                    <div class="form-group">
+                        <label for="col-form-label">Product type:</label><br>
+                        <div class="checkbox">
                            <label class="form-check-label">
-                           <input type="checkbox" class="form-check-input"> Indian dry snacks</label>
+                           <input value="on" type="checkbox" name="ind_dry_snack" class="form-check-input"><input type="hidden" value="off" name="ind_dry_snack" />Indian dry snacks</label>
                         </div>
-                        <div class="col-xs-12">
+                        <div class="checkbox">
                            <label class="form-check-label">
-                           <input type="checkbox" class="form-check-input"> Frozen foods and desserts</label>
+                           <input value="on" type="checkbox" name="frozen_food" class="form-check-input"><input type="hidden" value="off" name="frozen_food" />Frozen foods and desserts</label>
                         </div>
-                        <div class="col-xs-12">
+                        <div class="checkbox">
                            <label class="form-check-label">
-                           <input type="checkbox" class="form-check-input"> Drinks</label>
+                           <input value="on" type="checkbox" name="drinks" class="form-check-input"><input type="hidden" value="off" name="drinks" />Drinks</label>
                         </div>
-                        <div class="col-xs-12">
+                        <div class="checkbox">
                            <label class="form-check-label">
-                           <input type="checkbox" class="form-check-input"> Biscuits and bakery</label>
+                           <input value="on" type="checkbox" name="biscuits_bakery" class="form-check-input"><input type="hidden" value="off" name="biscuits_bakery" />Biscuits and bakery</label>
                         </div>
-                        <div class="col-xs-12">
-                           <label class="form-check-label"><input type="checkbox" class="form-check-input"> Sweets and candies</label>
+                        <div class="checkbox">
+                           <label class="form-check-label">
+                           <input value="on" type="checkbox" name="sweets" class="form-check-input"><input type="hidden" value="off" name="sweets" />Sweets and candies</label>
                         </div>
                      </div>
-                     <div class="g-recaptcha" align="center" data-sitekey="6LfM7SUUAAAAADldafhJTFqj__Nc8TSYTV1blnZa"></div>
-                     <p></p>
-                     <div class="col-xs-12" >
-                        <input type="submit" name="Submit">
-                     </div>
+                     <div align="center" style="padding:0 30px 10px 30px">
+                         <input type="submit" value="Submit" class="btn btn-info" style="width:50%">
+                    </div>
+                   <!--div class="g-recaptcha" align="center" data-sitekey="6LfM7SUUAAAAADldafhJTFqj__Nc8TSYTV1blnZa"></div-->
                </form>
-               </div>
-            </div>
-         </div>
-      </div>
+          </div>
+          <footer class="footer" id="footer" align="center">
+                <div class="container">
+                    <p>&copy; 2017 Proteus Tech Pvt. Ltd.</p>
+                </div>
+          </footer>
       <script>
          // This example displays an address form, using the autocomplete feature
          // of the Google Places API to help users fill in the information.

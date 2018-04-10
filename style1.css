@@ -1,0 +1,55 @@
+
+#header {
+    position: fixed;
+    background:white;
+    width:103%;
+    margin-top: auto;
+    z-index: 99999;
+    box-shadow: 0 0 10px 0 lightgrey;
+}
+
+
+p {
+    padding:15px;
+}
+
+html {
+  position: relative;
+  min-height: 100%;
+    overflow-x: hidden;
+}
+
+.footer {
+  position: absolute;
+  bottom: 0;
+  width: 100%;
+  /* Set the fixed height of the footer here */
+  height: 60px;
+  background-color: #f5f5f5;
+}
+
+body {
+    background-color: #f9fbfc;
+     margin-bottom: 60px;
+}
+
+h4 {
+    text-align: center;
+}
+
+#footer {
+    z-index: 9999;
+    box-shadow: 10px 0 10px 0 lightgrey;
+    background:white;
+
+}
+
+.checkbox {
+    z-index: 20;
+}
+
+#message {
+    margin-top: 125px !important;
+    text-align: center !important;
+    
+}
